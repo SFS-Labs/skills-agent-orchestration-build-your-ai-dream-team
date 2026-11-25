@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "name": "Atlas Redesign",
+      "owner": "Design Guild",
+      "status": "On track",
+      "recentActivity": "Prototype review completed today",
+      "priority": "High"
+    },
+    {
+      "name": "Pulse API",
+      "owner": "Platform Team",
+      "status": "At risk",
+      "recentActivity": "Contract tests awaiting updates",
+      "priority": "Critical"
+    },
+    {
+      "name": "Onboarding Refresh",
+      "owner": "Developer Experience",
+      "status": "Complete",
+      "recentActivity": "New guide published this week",
+      "priority": "Medium"
+    }
+  ]
+}

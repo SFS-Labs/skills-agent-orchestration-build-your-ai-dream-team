@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Pulse</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="dashboard">
+    <header>
+      <h1>Project Pulse</h1>
+      <p class="subtitle">A live pulse on the work that matters.</p>
+    </header>
+    <section id="projects" class="project-grid" aria-label="Projects"></section>
+  </main>
+  <script>
+    fetch('project-data.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const container = document.querySelector('#projects');
+        for (const project of data.projects) {
+          const card = document.createElement('article');
+          card.className = 'project-card';
+          card.innerHTML = `<h2>${project.name}</h2><p class="owner">${project.owner}</p><p class="status">${project.status}</p><p class="recentActivity">${project.recentActivity}</p><p class="priority">${project.priority}</p>`;
+          container.appendChild(card);
+        }
+      })
+      .catch((error) => {
+        document.querySelector('#projects').textContent = 'Unable to load project pulse data.';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
